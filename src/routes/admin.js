@@ -4,6 +4,10 @@ const router = express.Router();
 
 import OpenWeatherMap from "../api/OpenWeatherMap";
 
+// authentication
+const auth = require("../auth");
+router.use(auth);
+
 router.post("/get-weather", async (req, res) => {
   // dfcx fullfillment
   let response = req.body;
